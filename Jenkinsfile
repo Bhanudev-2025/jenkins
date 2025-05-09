@@ -13,6 +13,10 @@ pipeline {
 
             stage('BUILD') {
 
+                agent {
+                    label 'worker1'
+                }
+
                 steps {
                     echo "This build stage"
                 }
