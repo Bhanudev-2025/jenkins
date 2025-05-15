@@ -1,0 +1,40 @@
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                echo "this is a Checkout stage"
+            }
+        }
+        stage('BUILD') {
+            steps {
+                echo "this is a bulid stage"
+            }
+
+        }
+
+        stage('parallel-testing') {
+            parallel {
+                stage('TEST1') {
+                    steps {
+                        echo "This is TEST1 Chrome test stage"
+                        sleep 5
+                    }
+                }
+                stage('TEST2') {
+                    steps {
+                        echo "This is TEST2 window test stage"
+                        sleep 5
+                    }
+                    stage('TEST3') {
+                    steps {
+                        echo "This is TEST3 mozilla test stage"
+                        sleep 5
+                    }
+                }
+                }
+            }
+        }
+        
+    }
+}
