@@ -26,15 +26,9 @@ pipeline {
                         echo "This is TEST2 window test stage"
                         sleep 5
                     }
-                    stage('TEST3') {
-                    steps {
-                        echo "This is TEST3 mozilla test stage"
-                        sleep 5
-                    }
                 }
-                }
+                 }
             }
         }
         
     }
-}
